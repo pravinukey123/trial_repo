@@ -1,5 +1,5 @@
 pipeline {
-    agent any 
+    agent { label 'node-1' } 
     stages {
         stage('DELETION') { 
             steps {
@@ -10,30 +10,8 @@ pipeline {
        stage('CLONE') { 
             steps {
                 echo '--CLONE STAGE EXECUTION ---'
-    sh "git clone https://github.com/jatinnandwani/helloWordNodejs.git"
+    sh "git clone https://github.com/pravinukey123/trial_repo.git"
             }
         }
-        stage('TEST1') { 
-            steps {
-                echo '--TEST1 STAGE EXECUTION --'
-            }
-        }
-        stage('TEST2') { 
-            steps {
-                echo '--TEST2 STAGE EXECUTION --'
-            }
-        }
-        stage('BUILD') { 
-            steps {
-    echo '--BUILD STAGE EXECUTION --'
-    sh "node helloWordNodejs/index.js"
-            }
-        }
-  stage('DEPLOY') { 
-            steps {
-    echo '--WILL SEE IN NEXT PART --'
-            }
-        }
-    }
 }
 
