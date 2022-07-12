@@ -3,15 +3,10 @@ pipeline {
     stages {
         stage('DELETION') { 
             steps {
-                echo '--REMOVING REPOSITORY IF ALREADY EXIST --'
-                sh "sudo rm -rf helloWordNodejs"
-            }
-        }
-       stage('CLONE') { 
-            steps {
                 echo '--CLONE STAGE EXECUTION ---'
     sh "git clone https://github.com/pravinukey123/trial_repo.git"
-            }
+            }       
         }
+    }
 }
 
